@@ -1,0 +1,165 @@
+# Mirror Sites and Data Sources Reference List
+#
+# When editing online-distros, refer to this list to select mirror sources.
+#
+# Field descriptions:
+#   name     - Mirror site identifier (corresponds to sources[].mirror in online-distros)
+#   base_url - Mirror site root URL
+#   enabled  - Whether recommended (false means access issues, not recommended)
+#   note     - Remarks (optional)
+#   distros  - Distros supported by this mirror (based on distros.yaml crawl_paths)
+
+mirrors:
+  - name: "aliyun"
+    base_url: "https://mirrors.aliyun.com"
+    enabled: true
+    distros:
+      - Ubuntu
+      - Alpine
+      - Rocky Linux
+      - openSUSE
+
+  - name: "tsinghua"
+    base_url: "https://mirrors.tuna.tsinghua.edu.cn"
+    enabled: true
+    distros:
+      - Ubuntu
+      - Alpine
+      - openSUSE
+
+  - name: "163"
+    base_url: "https://mirrors.163.com"
+    enabled: true
+    distros:
+      - Ubuntu
+      - Rocky Linux
+      - openSUSE
+
+  - name: "bfsu"
+    base_url: "https://mirrors.bfsu.edu.cn"
+    enabled: true
+    distros:
+      - Ubuntu
+      - Alpine
+
+  - name: "nju"
+    base_url: "https://mirrors.nju.edu.cn"
+    enabled: true
+    distros:
+      - Ubuntu
+      - Alpine
+      - Rocky Linux
+
+  - name: "sjtu"
+    base_url: "https://mirrors.sjtug.sjtu.edu.cn"
+    enabled: true
+    distros:
+      - openSUSE
+
+  - name: "hit"
+    base_url: "https://mirrors.hit.edu.cn"
+    enabled: true
+    distros:
+      - Ubuntu
+      - Alpine
+
+  - name: "zju"
+    base_url: "https://mirrors.zju.edu.cn"
+    enabled: true
+    distros:
+      - Ubuntu
+      - Alpine
+      - Rocky Linux
+
+  - name: "hust"
+    base_url: "https://mirrors.hust.edu.cn"
+    enabled: true
+    distros: []
+
+  - name: "tencent"
+    base_url: "https://mirrors.cloud.tencent.com"
+    enabled: true
+    distros:
+      - Ubuntu
+      - Alpine
+      - Rocky Linux
+
+  - name: "huawei"
+    base_url: "https://mirrors.huaweicloud.com"
+    enabled: true
+    distros:
+      - Ubuntu
+      - Alpine
+      - Rocky Linux
+      - openSUSE
+
+  - name: "volc"
+    base_url: "https://mirrors.volces.com"
+    enabled: true
+    distros:
+      - Ubuntu
+      - Alpine
+      - Rocky Linux
+
+  - name: "sohu"
+    base_url: "https://mirrors.sohu.com"
+    enabled: true
+    distros: []
+
+# ============================================================================
+# LXC Images Mirror Sites
+#
+# These mirrors host Linux Containers (LXC) official rootfs images.
+# They provide standardized RootFS files that can be directly used for WSL import.
+# ============================================================================
+
+lxc_mirrors:
+  - name: "lxc-tuna"
+    base_url: "https://mirrors.tuna.tsinghua.edu.cn/lxc-images"
+    enabled: true
+    note: "Tsinghua University LXC mirror"
+    distros:
+      - Debian
+      - Ubuntu
+      - Alpine
+      - Devuan
+
+  - name: "lxc-bfsu"
+    base_url: "https://mirrors.bfsu.edu.cn/lxc-images"
+    enabled: true
+    note: "Beijing Foreign Studies University LXC mirror"
+    distros:
+      - Debian
+      - Ubuntu
+      - Alpine
+      - Devuan
+
+  - name: "lxc-nju"
+    base_url: "https://mirrors.nju.edu.cn/lxc-images"
+    enabled: true
+    note: "Nanjing University LXC mirror"
+    distros:
+      - Debian
+      - Ubuntu
+      - Alpine
+      - Devuan
+
+  - name: "lxc-tencent"
+    base_url: "https://mirrors.cloud.tencent.com/lxc-images"
+    enabled: true
+    note: "Tencent Cloud LXC mirror"
+    distros:
+      - Debian
+      - Ubuntu
+      - Alpine
+      - Devuan
+
+  - name: "lxc-huawei"
+    base_url: "https://mirrors.huaweicloud.com/lxc-images"
+    enabled: true
+    note: "Huawei Cloud LXC mirror"
+    distros:
+      - Debian
+      - Ubuntu
+      - Alpine
+      - Devuan

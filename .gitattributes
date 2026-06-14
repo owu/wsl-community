@@ -1,0 +1,13 @@
+# Auto detect text files and normalize LF
+* text=auto
+
+# Shell scripts must use LF (executed in Linux/WSL)
+*.sh text eol=lf
+
+# Cloudflare Pages config must use LF
+_headers text eol=lf
+
+# Data files
+*.json text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf

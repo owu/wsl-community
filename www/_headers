@@ -1,0 +1,11 @@
+# API - JSON endpoints
+/api/*
+  Cache-Control: public, s-maxage=120, max-age=60
+  Content-Type: application/json; charset=utf-8
+  Access-Control-Allow-Origin: *
+
+# Scripts
+/scripts/*
+  Cache-Control: public, s-maxage=300, max-age=180
+  Content-Type: application/x-sh; charset=utf-8
+  Access-Control-Allow-Origin: *
