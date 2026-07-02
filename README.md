@@ -8,13 +8,7 @@ This repository hosts the scripts and JSON data endpoints required by WSL Dashbo
 
 > **Note**: This is a **data & scripts** repository. For the main application, please visit [wsl-dashboard](https://github.com/owu/wsl-dashboard).
 
-### Data Source
 
-The `online-distros` data is community-maintained, with multiple filtering stages (architecture, format, version, mirror count) applied before outputting standardized JSON.
-
-For details on the filtering rules, see [Data Source and Filtering Rules](documents/en/data-source.md).
-
----
 
 ## Architecture Overview
 
@@ -41,7 +35,8 @@ wsl-community/
 ├── README.md                    # English (not published)
 ├── README.zh-CN.md              # Chinese (not published)
 ├── LICENSE                      # GPLv3 License (not published)
-├── documents/                   # Documentation (not published)
+│
+├── documents/                   # Development docs (not published to CDN)
 │   ├── zh-CN/                   # Chinese docs
 │   │   ├── data-source.md       # Data source and filtering rules
 │   │   ├── debug-config.md      # Debug configuration guide
@@ -51,6 +46,10 @@ wsl-community/
 │       ├── debug-config.md
 │       └── mirrors.yml
 │
+├── scripts/                     # Repository-level utility scripts (not published to CDN)
+│   │                            # For development, operations, automation, etc.
+│   └── export-wsl.ps1           # Export WSL distros to .tar.gz backup
+│
 └── www/                         # Publish directory (auto-published to CDN on main)
     ├── _headers                 # CDN response headers
     │
@@ -58,10 +57,74 @@ wsl-community/
     │   └── install/             # Data for "Install" page
     │       └── online-distros   # Online distro mirror list
     │
-    └── scripts/                 # Scripts
+    └── scripts/                 # CDN-delivered scripts (called by software online)
         └── home/                # Scripts for "Home" page
             └── distro-cleanup.sh         # Distro cleanup script
 ```
+
+### Directory Purposes
+
+| Directory | Purpose | Published to CDN |
+|:---|:---|:---:|
+| `documents/` | Development docs, data specs, debug guides | No |
+| `scripts/` | Repository-level utility scripts for dev/ops/automation | No |
+| `www/` | Data and scripts consumed by the software, auto-published on PR merge | Yes |
+
+---
+
+## Repository Utility Scripts (`scripts/`)
+
+This directory contains repository-level utility scripts that are **not published to CDN**. They are intended for local use by developers and maintainers — for development, operations, automation, etc. For example, you can schedule them via the **WSL Dashboard Task Scheduler** to run backups on a recurring basis.
+
+### Export WSL Distros (`export-wsl.ps1`)
+
+> **Platform:** Windows (PowerShell)
+> **Prerequisite:** [WSL](https://learn.microsoft.com/windows/wsl/) installed
+
+Exports specified WSL distributions to `.tar.gz` backup files with an auto-generated timestamp in the filename to avoid overwrites.
+
+**Usage:**
+
+1. Edit the config section at the top of the script to set the distro names and target directory:
+   ```powershell
+   $DistroNames = @(
+       "Ubuntu-22.04"
+       "Debian"
+   )
+   $ExportDir = "D:\WSL-Exports"
+   ```
+2. Run the script directly (no admin rights required):
+   ```powershell
+   .\scripts\export-wsl.ps1
+   ```
+3. Exported file format: `Ubuntu-22.04_20260702_143022.tar.gz`
+
+**How it works:** The script runs `wsl --shutdown` to stop all WSL instances, then exports each distro sequentially and displays the file size.
+
+### Contributing Scripts
+
+Feel free to submit Pull Requests adding new utility scripts to `scripts/`. Please keep in mind:
+
+- Include clear comments explaining the purpose and usage
+- Note any external dependencies (e.g., `wsl.exe`) in comments
+- Provide configurable variables at the top of the script for easy customization
+
+---
+
+## Publish Directory (`www/`)
+
+This is the core output of the repository — the `www/` directory on the `main` branch is **automatically published to CDN** and served via `https://api3.wslui.com`. All data and scripts consumed online by WSL Dashboard come from here.
+
+> Directory structure maps directly to URL paths. For example, `www/api/install/online-distros` is accessible at `https://api3.wslui.com/api/install/online-distros`.
+
+`www/` currently contains two types of content:
+
+| Path | Purpose | Consumed By |
+|:---|:---|:---|
+| `www/api/install/online-distros` | Online distro mirror source data | WSL Dashboard - Install page |
+| `www/scripts/home/distro-cleanup.sh` | Distro cleanup script (runs as root inside WSL) | WSL Dashboard - Compress distro |
+
+When a PR modifying files under `www/` is merged to `main`, the CDN content updates automatically — no manual deployment needed.
 
 ### URL Mapping
 
@@ -138,6 +201,14 @@ This file is in JSON format and defines the online distros and their mirror sour
 | `sources[].mirror` | `string` | Mirror site identifier (e.g., `sjtu`, `tencent`) |
 | `sources[].format` | `string` | File format (`tar.gz`, `tar.xz`, etc.) |
 | `sources[].last_modified` | `string` | Last modified time (optional) |
+
+#### Data Source
+
+The `online-distros` data is community-maintained, with multiple filtering stages (architecture, format, version, mirror count) applied before outputting standardized JSON.
+
+For details on the filtering rules, see [Data Source and Filtering Rules](documents/en/data-source.md).
+
+---
 
 ### 2. Edit Cleanup Script (`distro-cleanup.sh`)
 

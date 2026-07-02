@@ -8,12 +8,6 @@
 
 > **注意**：这是**数据与脚本**仓库。主应用程序请访问 [wsl-dashboard](https://github.com/owu/wsl-dashboard)。
 
-### 数据来源
-
-`online-distros` 数据由社区维护，经过架构、格式、版本、镜像数量等多轮筛选后输出标准化 JSON。
-
-详细的数据筛选规范请参阅 [数据来源与筛选规则](documents/zh-CN/data-source.md)。
-
 ---
 
 ## 架构概览
@@ -41,7 +35,8 @@ wsl-community/
 ├── README.md                    # 英文说明（不发布）
 ├── README.zh-CN.md              # 中文说明（不发布）
 ├── LICENSE                      # GPLv3 许可证（不发布）
-├── documents/                   # 开发文档（不发布）
+│
+├── documents/                   # 开发文档（不发布到 CDN）
 │   ├── zh-CN/                   # 中文文档
 │   │   ├── data-source.md       # 数据来源与过滤规则
 │   │   ├── debug-config.md      # 调试配置说明
@@ -51,6 +46,10 @@ wsl-community/
 │       ├── debug-config.md
 │       └── mirrors.yml
 │
+├── scripts/                     # 仓库级工具脚本（不发布到 CDN）
+│   │                            # 用于辅助开发、运维、自动化等场景
+│   └── export-wsl.ps1           # 导出 WSL 发行版为 .tar.gz 备份
+│
 └── www/                         # 发布目录（合并到 main 后自动发布到 CDN）
     ├── _headers                 # CDN 响应头配置
     │
@@ -58,10 +57,74 @@ wsl-community/
     │   └── install/             # "安装"页面使用的数据
     │       └── online-distros   # 在线发行版镜像源列表
     │
-    └── scripts/                 # 脚本工具
+    └── scripts/                 # CDN 分发的脚本（软件在线调用）
         └── home/                # "主页"使用的脚本
             └── distro-cleanup.sh         # 发行版清理脚本
 ```
+
+### 目录说明
+
+| 目录 | 用途 | 发布到 CDN |
+|:---|:---|:---:|
+| `documents/` | 开发文档、数据规范、调试指南 | 否 |
+| `scripts/` | 仓库级工具脚本，辅助开发/运维/自动化 | 否 |
+| `www/` | 软件在线调用的数据和脚本，PR 合入后自动发布 | 是 |
+
+---
+
+## 仓库工具脚本 (`scripts/`)
+
+该目录存放仓库级别的工具脚本，**不会发布到 CDN**，仅供开发者或仓库维护者在本地使用。它们通常用于辅助开发、运维、自动化等场景，例如配合 **WSL Dashboard 的任务调度器 (Task Scheduler)** 定时执行备份任务。
+
+### 导出 WSL 发行版 (`export-wsl.ps1`)
+
+> **适用平台：** Windows（PowerShell）
+> **依赖：** [WSL](https://learn.microsoft.com/windows/wsl/) 已安装
+
+将指定的 WSL 发行版导出为 `.tar.gz` 备份文件，文件名自动追加时间戳，避免覆盖。
+
+**使用方式：**
+
+1. 编辑脚本顶部配置区，填写要导出的发行版名称和目标目录：
+   ```powershell
+   $DistroNames = @(
+       "Ubuntu-22.04"
+       "Debian"
+   )
+   $ExportDir = "D:\WSL-Exports"
+   ```
+2. 直接运行脚本（无需管理员权限）：
+   ```powershell
+   .\scripts\export-wsl.ps1
+   ```
+3. 导出的文件格式：`Ubuntu-22.04_20260702_143022.tar.gz`
+
+**工作原理：** 脚本会先执行 `wsl --shutdown` 停止所有 WSL 实例，然后逐一导出并显示文件大小。
+
+### 贡献脚本
+
+欢迎通过 Pull Request 向 `scripts/` 目录提交新的工具脚本。提交时请注意：
+
+- 脚本需有清晰的注释说明用途和使用方式
+- 如果依赖外部工具（如 `wsl.exe`），请在注释中注明
+- 建议在脚本开头提供可配置的变量区域，方便他人直接修改使用
+
+---
+
+## 发布目录 (`www/`)
+
+该目录是仓库的核心输出——`main` 分支的 `www/` 目录内容会**自动发布到 CDN**，通过 `https://api3.wslui.com` 域名访问。WSL Dashboard 软件在线调用的数据和脚本均来源于此。
+
+> 目录结构直接映射为 URL 路径，例如 `www/api/install/online-distros` 可通过 `https://api3.wslui.com/api/install/online-distros` 访问。
+
+`www/` 下目前包含两类内容：
+
+| 路径 | 用途 | 调用方 |
+|:---|:---|:---|
+| `www/api/install/online-distros` | 在线发行版镜像源数据 | WSL Dashboard - Install 页 |
+| `www/scripts/home/distro-cleanup.sh` | 发行版清理脚本（在 WSL 内以 root 执行） | WSL Dashboard - 压缩发行版 |
+
+通过 PR 修改 `www/` 下的文件并合并到 `main` 后，CDN 内容会自动更新，无需手动部署。
 
 ### URL 映射
 
@@ -138,6 +201,14 @@ wsl-community/
 | `sources[].mirror` | `string` | 镜像站标识（如 `sjtu`、`tencent`） |
 | `sources[].format` | `string` | 文件格式（`tar.gz`、`tar.xz` 等） |
 | `sources[].last_modified` | `string` | 最后修改时间（可选） |
+
+#### 数据来源
+
+`online-distros` 数据由社区维护，经过架构、格式、版本、镜像数量等多轮筛选后输出标准化 JSON。
+
+详细的数据筛选规范请参阅 [数据来源与筛选规则](documents/zh-CN/data-source.md)。
+
+---
 
 ### 2. 编辑清理脚本 (`distro-cleanup.sh`)
 
