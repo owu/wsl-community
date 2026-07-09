@@ -20,6 +20,9 @@ $ExportDir = "D:\WSL-Exports"
 # Get current timestamp for filename
 $Timestamp = Get-Date -Format "yyyyMMdd_HHmmss"
 
+# Log file path (same directory as this script)
+$LogFile = Join-Path $PSScriptRoot 'export-wsl.log'
+
 function Export-Distro {
     param(
         [string]$DistroName,
@@ -43,6 +46,9 @@ function Export-Distro {
 }
 
 # --- Main ---
+
+# Log script start
+"[$((Get-Date -Format 'yyyy-MM-dd HH:mm:ss'))] Script started." | Out-File $LogFile -Append -Encoding UTF8
 
 if ($DistroNames.Count -eq 0) {
     Write-Host "DistroNames is empty, nothing to export. Exiting." -ForegroundColor Yellow
@@ -71,3 +77,6 @@ foreach ($distro in $DistroNames) {
 
 Write-Host "`nExport completed at $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')!" -ForegroundColor Cyan
 Write-Host "Files saved to: $ExportDir" -ForegroundColor Cyan
+
+# Log script completion
+"[$((Get-Date -Format 'yyyy-MM-dd HH:mm:ss'))] Script completed." | Out-File $LogFile -Append -Encoding UTF8

@@ -339,6 +339,11 @@ Or simply delete the entire file.
 - **Consistent indentation**: All files use **4 spaces** for indentation, tabs are prohibited (the project has `.editorconfig` configured, mainstream editors will follow automatically)
 - **Script compatibility**: Cleanup scripts should be compatible with mainstream Linux distros
 - **No file extension in URL**: Access via `/api/install/online-distros`, not `.json`
+- **Distro sorting rule**: The `data.distros` array in the `online-distros` file must be sorted by:
+  - Primary key: `name` (distribution name), **descending** (Z → A)
+  - Secondary key: `version` (version number), **descending** (higher versions first)
+  - Example order: `Ubuntu 24.04` → `Ubuntu 22.04` → `Ubuntu 20.04` → ... → `Amazon Linux 2023` → `Amazon Linux 2` → `AlmaLinux 10` → `Alpine 3.24` → `Alpine 3.22`
+  - This allows contributors to quickly determine where to insert new distributions, keeping the file structure clear and facilitating code review
 
 ---
 

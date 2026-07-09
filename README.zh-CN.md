@@ -339,6 +339,11 @@ cleanup-script = ''
 - **统一缩进**：所有文件使用 **4 个空格**缩进，禁止使用 Tab（项目已配置 `.editorconfig`，主流编辑器会自动遵循）
 - **脚本兼容性**：清理脚本应兼容主流 Linux 发行版
 - **URL 不要加扩展名**：访问时使用 `/api/install/online-distros`，不是 `.json`
+- **发行版排序规则**：`online-distros` 文件中的 `data.distros` 数组必须按以下规则排序：
+  - 主排序键：`name`（发行版名称），**降序**（Z → A）
+  - 次排序键：`version`（版本号），**降序**（高版本在前）
+  - 示例顺序：`Ubuntu 24.04` → `Ubuntu 22.04` → `Ubuntu 20.04` → ... → `Amazon Linux 2023` → `Amazon Linux 2` → `AlmaLinux 10` → `Alpine 3.24` → `Alpine 3.22`
+  - 这样贡献者可以快速确定新发行版应该插入的位置，保持文件结构清晰，便于代码审查
 
 ---
 
