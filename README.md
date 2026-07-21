@@ -344,6 +344,7 @@ Or simply delete the entire file.
   - Secondary key: `version` (version number), **descending** (higher versions first)
   - Example order: `Ubuntu 24.04` → `Ubuntu 22.04` → `Ubuntu 20.04` → ... → `Amazon Linux 2023` → `Amazon Linux 2` → `AlmaLinux 10` → `Alpine 3.24` → `Alpine 3.22`
   - This allows contributors to quickly determine where to insert new distributions, keeping the file structure clear and facilitating code review
+- **Mirror source sorting rule**: The `sources` array within each distro (`data.distros[*].sources[*]`) must be sorted by the `mirror` field **descending** (Z → A), so contributors can quickly determine where to insert new mirror sources
 
 ---
 

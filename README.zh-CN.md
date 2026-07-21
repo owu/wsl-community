@@ -344,6 +344,7 @@ cleanup-script = ''
   - 次排序键：`version`（版本号），**降序**（高版本在前）
   - 示例顺序：`Ubuntu 24.04` → `Ubuntu 22.04` → `Ubuntu 20.04` → ... → `Amazon Linux 2023` → `Amazon Linux 2` → `AlmaLinux 10` → `Alpine 3.24` → `Alpine 3.22`
   - 这样贡献者可以快速确定新发行版应该插入的位置，保持文件结构清晰，便于代码审查
+- **镜像源排序规则**：每个发行版的 `sources` 数组（`data.distros[*].sources[*]`）必须按 `mirror` 字段**降序**排列（Z → A），这样新增镜像源时可以快速确定插入位置
 
 ---
 
