@@ -2,7 +2,7 @@
   "err": 0,
   "msg": "success",
   "data": {
-    "update_time": "2026-07-22T13:24:43.582130674Z",
+    "update_time": "2026-07-22T16:42:33.940697423Z",
     "distros": [
       {
         "name": "openSUSE",
@@ -23,24 +23,6 @@
           {
             "url": "https://mirrors.bfsu.edu.cn/lxc-images/images/opensuse/16.0/amd64/cloud/20260721_04%3A20/rootfs.tar.xz",
             "mirror": "lxc-bfsu",
-            "format": "tar.xz",
-            "last_modified": "0001-01-01T00:00:00Z"
-          }
-        ]
-      },
-      {
-        "name": "openSUSE",
-        "version": "15.6",
-        "sources": [
-          {
-            "url": "https://mirrors.sjtug.sjtu.edu.cn/openSUSE/distribution/leap/15.6/appliances/opensuse-leap-dnf-image.x86_64-15.6.0-lxc-dnf-Build19.146.tar.xz",
-            "mirror": "sjtu",
-            "format": "tar.xz",
-            "last_modified": "0001-01-01T00:00:00Z"
-          },
-          {
-            "url": "https://mirrors.163.com/openSUSE/distribution/leap/15.6/appliances/opensuse-leap-dnf-image.x86_64-15.6.0-lxc-dnf-Build19.146.tar.xz",
-            "mirror": "163",
             "format": "tar.xz",
             "last_modified": "0001-01-01T00:00:00Z"
           }
@@ -181,12 +163,6 @@
             "mirror": "aliyun",
             "format": "wsl",
             "last_modified": "2026-02-12T22:42:00Z"
-          },
-          {
-            "url": "https://mirrors.163.com/ubuntu-releases/24.04/ubuntu-24.04.4-wsl-amd64.wsl",
-            "mirror": "163",
-            "format": "wsl",
-            "last_modified": "0001-01-01T00:00:00Z"
           }
         ]
       },
@@ -265,12 +241,6 @@
             "mirror": "aliyun",
             "format": "wsl",
             "last_modified": "2026-03-09T22:21:00Z"
-          },
-          {
-            "url": "https://mirrors.163.com/ubuntu-releases/22.04/ubuntu-22.04.5-wsl-amd64.wsl",
-            "mirror": "163",
-            "format": "wsl",
-            "last_modified": "0001-01-01T00:00:00Z"
           }
         ]
       },
@@ -337,12 +307,6 @@
             "mirror": "aliyun",
             "format": "wsl",
             "last_modified": "2026-03-09T22:21:00Z"
-          },
-          {
-            "url": "https://mirrors.163.com/ubuntu-releases/20.04/ubuntu-20.04.6-wsl-amd64.wsl",
-            "mirror": "163",
-            "format": "wsl",
-            "last_modified": "0001-01-01T00:00:00Z"
           }
         ]
       },
@@ -391,12 +355,6 @@
             "mirror": "aliyun",
             "format": "wsl",
             "last_modified": "2026-05-26T03:57:00Z"
-          },
-          {
-            "url": "https://mirrors.163.com/rocky/9/images/x86_64/Rocky-9-WSL-Base-9.8-20260525.0.x86_64.wsl",
-            "mirror": "163",
-            "format": "wsl",
-            "last_modified": "0001-01-01T00:00:00Z"
           }
         ]
       },
