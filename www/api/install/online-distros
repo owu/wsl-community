@@ -2,7 +2,7 @@
   "err": 0,
   "msg": "success",
   "data": {
-    "update_time": "2026-08-14T13:40:03.584530271Z",
+    "update_time": "2026-08-15T22:05:11.669851998Z",
     "distros": [
       {
         "name": "openSUSE",
@@ -241,6 +241,12 @@
             "mirror": "aliyun",
             "format": "wsl",
             "last_modified": "2026-03-09T22:21:00Z"
+          },
+          {
+            "url": "https://mirrors.163.com/ubuntu-releases/22.04/ubuntu-22.04.5-wsl-amd64.wsl",
+            "mirror": "163",
+            "format": "wsl",
+            "last_modified": "0001-01-01T00:00:00Z"
           }
         ]
       },
