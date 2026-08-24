@@ -2,7 +2,7 @@
   "err": 0,
   "msg": "success",
   "data": {
-    "update_time": "2026-08-22T18:25:10.509600044Z",
+    "update_time": "2026-08-24T03:20:12.021923443Z",
     "distros": [
       {
         "name": "openSUSE",
@@ -15,14 +15,32 @@
             "last_modified": "0001-01-01T00:00:00Z"
           },
           {
-            "url": "https://mirrors.nju.edu.cn/lxc-images/images/opensuse/16.0/amd64/cloud/20260820_04%3A20/rootfs.tar.xz",
+            "url": "https://mirrors.nju.edu.cn/lxc-images/images/opensuse/16.0/amd64/cloud/20260822_04%3A20/rootfs.tar.xz",
             "mirror": "lxc-nju",
             "format": "tar.xz",
-            "last_modified": "2026-08-20T13:08:26Z"
+            "last_modified": "2026-08-22T13:58:42Z"
           },
           {
             "url": "https://mirrors.bfsu.edu.cn/lxc-images/images/opensuse/16.0/amd64/cloud/20260822_04%3A20/rootfs.tar.xz",
             "mirror": "lxc-bfsu",
+            "format": "tar.xz",
+            "last_modified": "0001-01-01T00:00:00Z"
+          }
+        ]
+      },
+      {
+        "name": "openSUSE",
+        "version": "15.6",
+        "sources": [
+          {
+            "url": "https://mirrors.sjtug.sjtu.edu.cn/openSUSE/distribution/leap/15.6/appliances/opensuse-leap-dnf-image.x86_64-15.6.0-lxc-dnf-Build19.146.tar.xz",
+            "mirror": "sjtu",
+            "format": "tar.xz",
+            "last_modified": "0001-01-01T00:00:00Z"
+          },
+          {
+            "url": "https://mirrors.163.com/openSUSE/distribution/leap/15.6/appliances/opensuse-leap-dnf-image.x86_64-15.6.0-lxc-dnf-Build19.146.tar.xz",
+            "mirror": "163",
             "format": "tar.xz",
             "last_modified": "0001-01-01T00:00:00Z"
           }
@@ -45,10 +63,10 @@
             "last_modified": "0001-01-01T00:00:00Z"
           },
           {
-            "url": "https://mirrors.nju.edu.cn/lxc-images/images/opensuse/tumbleweed/amd64/cloud/20260820_04%3A20/rootfs.tar.xz",
+            "url": "https://mirrors.nju.edu.cn/lxc-images/images/opensuse/tumbleweed/amd64/cloud/20260822_04%3A20/rootfs.tar.xz",
             "mirror": "lxc-nju",
             "format": "tar.xz",
-            "last_modified": "2026-08-20T13:12:12Z"
+            "last_modified": "2026-08-22T14:03:02Z"
           },
           {
             "url": "https://mirrors.bfsu.edu.cn/lxc-images/images/opensuse/tumbleweed/amd64/cloud/20260822_04%3A20/rootfs.tar.xz",
@@ -63,19 +81,19 @@
         "version": "24.03",
         "sources": [
           {
-            "url": "https://mirrors.tuna.tsinghua.edu.cn/lxc-images/images/openeuler/24.03/amd64/cloud/20260821_15%3A48/rootfs.tar.xz",
+            "url": "https://mirrors.tuna.tsinghua.edu.cn/lxc-images/images/openeuler/24.03/amd64/cloud/20260822_15%3A48/rootfs.tar.xz",
             "mirror": "lxc-tuna",
             "format": "tar.xz",
             "last_modified": "0001-01-01T00:00:00Z"
           },
           {
-            "url": "https://mirrors.nju.edu.cn/lxc-images/images/openeuler/24.03/amd64/cloud/20260820_15%3A48/rootfs.tar.xz",
+            "url": "https://mirrors.nju.edu.cn/lxc-images/images/openeuler/24.03/amd64/cloud/20260822_15%3A48/rootfs.tar.xz",
             "mirror": "lxc-nju",
             "format": "tar.xz",
-            "last_modified": "2026-08-21T01:03:42Z"
+            "last_modified": "2026-08-23T00:34:00Z"
           },
           {
-            "url": "https://mirrors.bfsu.edu.cn/lxc-images/images/openeuler/24.03/amd64/cloud/20260821_15%3A48/rootfs.tar.xz",
+            "url": "https://mirrors.bfsu.edu.cn/lxc-images/images/openeuler/24.03/amd64/cloud/20260822_15%3A48/rootfs.tar.xz",
             "mirror": "lxc-bfsu",
             "format": "tar.xz",
             "last_modified": "0001-01-01T00:00:00Z"
@@ -117,19 +135,19 @@
             "last_modified": "2026-02-10T09:01:21Z"
           },
           {
-            "url": "https://mirrors.tuna.tsinghua.edu.cn/lxc-images/images/ubuntu/noble/amd64/cloud/20260821_07%3A42/rootfs.tar.xz",
+            "url": "https://mirrors.tuna.tsinghua.edu.cn/lxc-images/images/ubuntu/noble/amd64/cloud/20260822_07%3A42/rootfs.tar.xz",
             "mirror": "lxc-tuna",
             "format": "tar.xz",
             "last_modified": "0001-01-01T00:00:00Z"
           },
           {
-            "url": "https://mirrors.nju.edu.cn/lxc-images/images/ubuntu/noble/amd64/cloud/20260820_07%3A42/rootfs.tar.xz",
+            "url": "https://mirrors.nju.edu.cn/lxc-images/images/ubuntu/noble/amd64/cloud/20260822_07%3A42/rootfs.tar.xz",
             "mirror": "lxc-nju",
             "format": "tar.xz",
-            "last_modified": "2026-08-20T17:45:40Z"
+            "last_modified": "2026-08-22T17:31:36Z"
           },
           {
-            "url": "https://mirrors.bfsu.edu.cn/lxc-images/images/ubuntu/noble/amd64/cloud/20260821_07%3A42/rootfs.tar.xz",
+            "url": "https://mirrors.bfsu.edu.cn/lxc-images/images/ubuntu/noble/amd64/cloud/20260822_07%3A42/rootfs.tar.xz",
             "mirror": "lxc-bfsu",
             "format": "tar.xz",
             "last_modified": "0001-01-01T00:00:00Z"
@@ -163,6 +181,12 @@
             "mirror": "aliyun",
             "format": "wsl",
             "last_modified": "2026-02-12T22:42:00Z"
+          },
+          {
+            "url": "https://mirrors.163.com/ubuntu-releases/24.04/ubuntu-24.04.4-wsl-amd64.wsl",
+            "mirror": "163",
+            "format": "wsl",
+            "last_modified": "0001-01-01T00:00:00Z"
           }
         ]
       },
@@ -195,19 +219,19 @@
             "last_modified": "2026-03-09T22:21:14Z"
           },
           {
-            "url": "https://mirrors.tuna.tsinghua.edu.cn/lxc-images/images/ubuntu/jammy/amd64/cloud/20260821_07%3A42/rootfs.tar.xz",
+            "url": "https://mirrors.tuna.tsinghua.edu.cn/lxc-images/images/ubuntu/jammy/amd64/cloud/20260822_07%3A42/rootfs.tar.xz",
             "mirror": "lxc-tuna",
             "format": "tar.xz",
             "last_modified": "0001-01-01T00:00:00Z"
           },
           {
-            "url": "https://mirrors.nju.edu.cn/lxc-images/images/ubuntu/jammy/amd64/cloud/20260820_07%3A42/rootfs.tar.xz",
+            "url": "https://mirrors.nju.edu.cn/lxc-images/images/ubuntu/jammy/amd64/cloud/20260822_07%3A42/rootfs.tar.xz",
             "mirror": "lxc-nju",
             "format": "tar.xz",
-            "last_modified": "2026-08-20T17:36:14Z"
+            "last_modified": "2026-08-22T17:21:53Z"
           },
           {
-            "url": "https://mirrors.bfsu.edu.cn/lxc-images/images/ubuntu/jammy/amd64/cloud/20260821_07%3A42/rootfs.tar.xz",
+            "url": "https://mirrors.bfsu.edu.cn/lxc-images/images/ubuntu/jammy/amd64/cloud/20260822_07%3A42/rootfs.tar.xz",
             "mirror": "lxc-bfsu",
             "format": "tar.xz",
             "last_modified": "0001-01-01T00:00:00Z"
@@ -241,6 +265,12 @@
             "mirror": "aliyun",
             "format": "wsl",
             "last_modified": "2026-03-09T22:21:00Z"
+          },
+          {
+            "url": "https://mirrors.163.com/ubuntu-releases/22.04/ubuntu-22.04.5-wsl-amd64.wsl",
+            "mirror": "163",
+            "format": "wsl",
+            "last_modified": "0001-01-01T00:00:00Z"
           }
         ]
       },
@@ -307,6 +337,12 @@
             "mirror": "aliyun",
             "format": "wsl",
             "last_modified": "2026-03-09T22:21:00Z"
+          },
+          {
+            "url": "https://mirrors.163.com/ubuntu-releases/20.04/ubuntu-20.04.6-wsl-amd64.wsl",
+            "mirror": "163",
+            "format": "wsl",
+            "last_modified": "0001-01-01T00:00:00Z"
           }
         ]
       },
@@ -321,10 +357,10 @@
             "last_modified": "0001-01-01T00:00:00Z"
           },
           {
-            "url": "https://mirrors.nju.edu.cn/lxc-images/images/rockylinux/10/amd64/cloud/20260821_02%3A06/rootfs.tar.xz",
+            "url": "https://mirrors.nju.edu.cn/lxc-images/images/rockylinux/10/amd64/cloud/20260822_02%3A06/rootfs.tar.xz",
             "mirror": "lxc-nju",
             "format": "tar.xz",
-            "last_modified": "2026-08-21T11:38:04Z"
+            "last_modified": "2026-08-22T14:44:03Z"
           },
           {
             "url": "https://mirrors.bfsu.edu.cn/lxc-images/images/rockylinux/10/amd64/cloud/20260822_02%3A06/rootfs.tar.xz",
@@ -355,6 +391,12 @@
             "mirror": "aliyun",
             "format": "wsl",
             "last_modified": "2026-05-26T03:57:00Z"
+          },
+          {
+            "url": "https://mirrors.163.com/rocky/9/images/x86_64/Rocky-9-WSL-Base-9.8-20260525.0.x86_64.wsl",
+            "mirror": "163",
+            "format": "wsl",
+            "last_modified": "0001-01-01T00:00:00Z"
           }
         ]
       },
@@ -363,19 +405,19 @@
         "version": "10",
         "sources": [
           {
-            "url": "https://mirrors.tuna.tsinghua.edu.cn/lxc-images/images/oracle/10/amd64/cloud/20260821_07%3A46/rootfs.tar.xz",
+            "url": "https://mirrors.tuna.tsinghua.edu.cn/lxc-images/images/oracle/10/amd64/cloud/20260822_07%3A46/rootfs.tar.xz",
             "mirror": "lxc-tuna",
             "format": "tar.xz",
             "last_modified": "0001-01-01T00:00:00Z"
           },
           {
-            "url": "https://mirrors.nju.edu.cn/lxc-images/images/oracle/10/amd64/cloud/20260820_07%3A46/rootfs.tar.xz",
+            "url": "https://mirrors.nju.edu.cn/lxc-images/images/oracle/10/amd64/cloud/20260822_07%3A46/rootfs.tar.xz",
             "mirror": "lxc-nju",
             "format": "tar.xz",
-            "last_modified": "2026-08-20T16:51:14Z"
+            "last_modified": "2026-08-22T16:51:07Z"
           },
           {
-            "url": "https://mirrors.bfsu.edu.cn/lxc-images/images/oracle/10/amd64/cloud/20260821_07%3A46/rootfs.tar.xz",
+            "url": "https://mirrors.bfsu.edu.cn/lxc-images/images/oracle/10/amd64/cloud/20260822_07%3A46/rootfs.tar.xz",
             "mirror": "lxc-bfsu",
             "format": "tar.xz",
             "last_modified": "0001-01-01T00:00:00Z"
@@ -387,19 +429,19 @@
         "version": "9",
         "sources": [
           {
-            "url": "https://mirrors.tuna.tsinghua.edu.cn/lxc-images/images/oracle/9/amd64/cloud/20260821_07%3A46/rootfs.tar.xz",
+            "url": "https://mirrors.tuna.tsinghua.edu.cn/lxc-images/images/oracle/9/amd64/cloud/20260822_07%3A46/rootfs.tar.xz",
             "mirror": "lxc-tuna",
             "format": "tar.xz",
             "last_modified": "0001-01-01T00:00:00Z"
           },
           {
-            "url": "https://mirrors.nju.edu.cn/lxc-images/images/oracle/9/amd64/cloud/20260820_07%3A46/rootfs.tar.xz",
+            "url": "https://mirrors.nju.edu.cn/lxc-images/images/oracle/9/amd64/cloud/20260822_07%3A46/rootfs.tar.xz",
             "mirror": "lxc-nju",
             "format": "tar.xz",
-            "last_modified": "2026-08-20T16:50:52Z"
+            "last_modified": "2026-08-22T16:50:45Z"
           },
           {
-            "url": "https://mirrors.bfsu.edu.cn/lxc-images/images/oracle/9/amd64/cloud/20260821_07%3A46/rootfs.tar.xz",
+            "url": "https://mirrors.bfsu.edu.cn/lxc-images/images/oracle/9/amd64/cloud/20260822_07%3A46/rootfs.tar.xz",
             "mirror": "lxc-bfsu",
             "format": "tar.xz",
             "last_modified": "0001-01-01T00:00:00Z"
@@ -411,7 +453,7 @@
         "version": "8",
         "sources": [
           {
-            "url": "https://mirrors.tuna.tsinghua.edu.cn/lxc-images/images/oracle/8/amd64/cloud/20260821_07%3A46/rootfs.tar.xz",
+            "url": "https://mirrors.tuna.tsinghua.edu.cn/lxc-images/images/oracle/8/amd64/cloud/20260822_07%3A46/rootfs.tar.xz",
             "mirror": "lxc-tuna",
             "format": "tar.xz",
             "last_modified": "0001-01-01T00:00:00Z"
@@ -423,13 +465,13 @@
             "last_modified": "0001-01-01T00:00:00Z"
           },
           {
-            "url": "https://mirrors.nju.edu.cn/lxc-images/images/oracle/8/amd64/cloud/20260820_07%3A48/rootfs.tar.xz",
+            "url": "https://mirrors.nju.edu.cn/lxc-images/images/oracle/8/amd64/cloud/20260822_07%3A46/rootfs.tar.xz",
             "mirror": "lxc-nju",
             "format": "tar.xz",
-            "last_modified": "2026-08-20T16:50:29Z"
+            "last_modified": "2026-08-22T16:50:27Z"
           },
           {
-            "url": "https://mirrors.bfsu.edu.cn/lxc-images/images/oracle/8/amd64/cloud/20260821_07%3A46/rootfs.tar.xz",
+            "url": "https://mirrors.bfsu.edu.cn/lxc-images/images/oracle/8/amd64/cloud/20260822_07%3A46/rootfs.tar.xz",
             "mirror": "lxc-bfsu",
             "format": "tar.xz",
             "last_modified": "0001-01-01T00:00:00Z"
@@ -441,19 +483,19 @@
         "version": "22.3",
         "sources": [
           {
-            "url": "https://mirrors.tuna.tsinghua.edu.cn/lxc-images/images/mint/zena/amd64/cloud/20260821_08%3A51/rootfs.tar.xz",
+            "url": "https://mirrors.tuna.tsinghua.edu.cn/lxc-images/images/mint/zena/amd64/cloud/20260822_08%3A51/rootfs.tar.xz",
             "mirror": "lxc-tuna",
             "format": "tar.xz",
             "last_modified": "0001-01-01T00:00:00Z"
           },
           {
-            "url": "https://mirrors.nju.edu.cn/lxc-images/images/mint/zena/amd64/cloud/20260820_08%3A51/rootfs.tar.xz",
+            "url": "https://mirrors.nju.edu.cn/lxc-images/images/mint/zena/amd64/cloud/20260822_08%3A51/rootfs.tar.xz",
             "mirror": "lxc-nju",
             "format": "tar.xz",
-            "last_modified": "2026-08-20T18:23:27Z"
+            "last_modified": "2026-08-22T18:12:56Z"
           },
           {
-            "url": "https://mirrors.bfsu.edu.cn/lxc-images/images/mint/zena/amd64/cloud/20260821_08%3A51/rootfs.tar.xz",
+            "url": "https://mirrors.bfsu.edu.cn/lxc-images/images/mint/zena/amd64/cloud/20260822_08%3A51/rootfs.tar.xz",
             "mirror": "lxc-bfsu",
             "format": "tar.xz",
             "last_modified": "0001-01-01T00:00:00Z"
@@ -465,19 +507,19 @@
         "version": "22.2",
         "sources": [
           {
-            "url": "https://mirrors.tuna.tsinghua.edu.cn/lxc-images/images/mint/zara/amd64/cloud/20260821_08%3A51/rootfs.tar.xz",
+            "url": "https://mirrors.tuna.tsinghua.edu.cn/lxc-images/images/mint/zara/amd64/cloud/20260822_08%3A51/rootfs.tar.xz",
             "mirror": "lxc-tuna",
             "format": "tar.xz",
             "last_modified": "0001-01-01T00:00:00Z"
           },
           {
-            "url": "https://mirrors.nju.edu.cn/lxc-images/images/mint/zara/amd64/cloud/20260820_08%3A57/rootfs.tar.xz",
+            "url": "https://mirrors.nju.edu.cn/lxc-images/images/mint/zara/amd64/cloud/20260822_08%3A51/rootfs.tar.xz",
             "mirror": "lxc-nju",
             "format": "tar.xz",
-            "last_modified": "2026-08-20T18:23:07Z"
+            "last_modified": "2026-08-22T18:12:39Z"
           },
           {
-            "url": "https://mirrors.bfsu.edu.cn/lxc-images/images/mint/zara/amd64/cloud/20260821_08%3A51/rootfs.tar.xz",
+            "url": "https://mirrors.bfsu.edu.cn/lxc-images/images/mint/zara/amd64/cloud/20260822_08%3A51/rootfs.tar.xz",
             "mirror": "lxc-bfsu",
             "format": "tar.xz",
             "last_modified": "0001-01-01T00:00:00Z"
@@ -489,7 +531,7 @@
         "version": "current",
         "sources": [
           {
-            "url": "https://mirrors.tuna.tsinghua.edu.cn/lxc-images/images/kali/current/amd64/cloud/20260821_17%3A14/rootfs.tar.xz",
+            "url": "https://mirrors.tuna.tsinghua.edu.cn/lxc-images/images/kali/current/amd64/cloud/20260822_17%3A14/rootfs.tar.xz",
             "mirror": "lxc-tuna",
             "format": "tar.xz",
             "last_modified": "0001-01-01T00:00:00Z"
@@ -501,13 +543,13 @@
             "last_modified": "0001-01-01T00:00:00Z"
           },
           {
-            "url": "https://mirrors.nju.edu.cn/lxc-images/images/kali/current/amd64/cloud/20260820_17%3A14/rootfs.tar.xz",
+            "url": "https://mirrors.nju.edu.cn/lxc-images/images/kali/current/amd64/cloud/20260821_17%3A14/rootfs.tar.xz",
             "mirror": "lxc-nju",
             "format": "tar.xz",
-            "last_modified": "2026-08-21T01:30:39Z"
+            "last_modified": "2026-08-22T01:30:30Z"
           },
           {
-            "url": "https://mirrors.bfsu.edu.cn/lxc-images/images/kali/current/amd64/cloud/20260821_17%3A14/rootfs.tar.xz",
+            "url": "https://mirrors.bfsu.edu.cn/lxc-images/images/kali/current/amd64/cloud/20260822_17%3A14/rootfs.tar.xz",
             "mirror": "lxc-bfsu",
             "format": "tar.xz",
             "last_modified": "0001-01-01T00:00:00Z"
@@ -519,19 +561,19 @@
         "version": "44",
         "sources": [
           {
-            "url": "https://mirrors.tuna.tsinghua.edu.cn/lxc-images/images/fedora/44/amd64/cloud/20260821_20%3A33/rootfs.tar.xz",
+            "url": "https://mirrors.tuna.tsinghua.edu.cn/lxc-images/images/fedora/44/amd64/cloud/20260822_20%3A33/rootfs.tar.xz",
             "mirror": "lxc-tuna",
             "format": "tar.xz",
             "last_modified": "0001-01-01T00:00:00Z"
           },
           {
-            "url": "https://mirrors.nju.edu.cn/lxc-images/images/fedora/44/amd64/cloud/20260820_20%3A33/rootfs.tar.xz",
+            "url": "https://mirrors.nju.edu.cn/lxc-images/images/fedora/44/amd64/cloud/20260821_20%3A33/rootfs.tar.xz",
             "mirror": "lxc-nju",
             "format": "tar.xz",
-            "last_modified": "2026-08-21T05:29:11Z"
+            "last_modified": "2026-08-22T05:30:28Z"
           },
           {
-            "url": "https://mirrors.bfsu.edu.cn/lxc-images/images/fedora/44/amd64/cloud/20260821_20%3A33/rootfs.tar.xz",
+            "url": "https://mirrors.bfsu.edu.cn/lxc-images/images/fedora/44/amd64/cloud/20260822_20%3A33/rootfs.tar.xz",
             "mirror": "lxc-bfsu",
             "format": "tar.xz",
             "last_modified": "0001-01-01T00:00:00Z"
@@ -543,19 +585,19 @@
         "version": "43",
         "sources": [
           {
-            "url": "https://mirrors.tuna.tsinghua.edu.cn/lxc-images/images/fedora/43/amd64/cloud/20260821_20%3A33/rootfs.tar.xz",
+            "url": "https://mirrors.tuna.tsinghua.edu.cn/lxc-images/images/fedora/43/amd64/cloud/20260822_20%3A33/rootfs.tar.xz",
             "mirror": "lxc-tuna",
             "format": "tar.xz",
             "last_modified": "0001-01-01T00:00:00Z"
           },
           {
-            "url": "https://mirrors.nju.edu.cn/lxc-images/images/fedora/43/amd64/cloud/20260820_20%3A33/rootfs.tar.xz",
+            "url": "https://mirrors.nju.edu.cn/lxc-images/images/fedora/43/amd64/cloud/20260821_20%3A33/rootfs.tar.xz",
             "mirror": "lxc-nju",
             "format": "tar.xz",
-            "last_modified": "2026-08-21T05:23:04Z"
+            "last_modified": "2026-08-22T05:23:01Z"
           },
           {
-            "url": "https://mirrors.bfsu.edu.cn/lxc-images/images/fedora/43/amd64/cloud/20260821_20%3A33/rootfs.tar.xz",
+            "url": "https://mirrors.bfsu.edu.cn/lxc-images/images/fedora/43/amd64/cloud/20260822_20%3A33/rootfs.tar.xz",
             "mirror": "lxc-bfsu",
             "format": "tar.xz",
             "last_modified": "0001-01-01T00:00:00Z"
@@ -567,19 +609,19 @@
         "version": "13",
         "sources": [
           {
-            "url": "https://mirrors.tuna.tsinghua.edu.cn/lxc-images/images/debian/trixie/amd64/cloud/20260821_05%3A24/rootfs.tar.xz",
+            "url": "https://mirrors.tuna.tsinghua.edu.cn/lxc-images/images/debian/trixie/amd64/cloud/20260823_05%3A24/rootfs.tar.xz",
             "mirror": "lxc-tuna",
             "format": "tar.xz",
             "last_modified": "0001-01-01T00:00:00Z"
           },
           {
-            "url": "https://mirrors.nju.edu.cn/lxc-images/images/debian/trixie/amd64/cloud/20260821_05%3A24/rootfs.tar.xz",
+            "url": "https://mirrors.nju.edu.cn/lxc-images/images/debian/trixie/amd64/cloud/20260822_05%3A24/rootfs.tar.xz",
             "mirror": "lxc-nju",
             "format": "tar.xz",
-            "last_modified": "2026-08-21T15:30:14Z"
+            "last_modified": "2026-08-22T15:23:01Z"
           },
           {
-            "url": "https://mirrors.bfsu.edu.cn/lxc-images/images/debian/trixie/amd64/cloud/20260821_05%3A24/rootfs.tar.xz",
+            "url": "https://mirrors.bfsu.edu.cn/lxc-images/images/debian/trixie/amd64/cloud/20260823_05%3A24/rootfs.tar.xz",
             "mirror": "lxc-bfsu",
             "format": "tar.xz",
             "last_modified": "0001-01-01T00:00:00Z"
@@ -591,19 +633,19 @@
         "version": "12",
         "sources": [
           {
-            "url": "https://mirrors.tuna.tsinghua.edu.cn/lxc-images/images/debian/bookworm/amd64/cloud/20260821_05%3A24/rootfs.tar.xz",
+            "url": "https://mirrors.tuna.tsinghua.edu.cn/lxc-images/images/debian/bookworm/amd64/cloud/20260823_05%3A24/rootfs.tar.xz",
             "mirror": "lxc-tuna",
             "format": "tar.xz",
             "last_modified": "0001-01-01T00:00:00Z"
           },
           {
-            "url": "https://mirrors.nju.edu.cn/lxc-images/images/debian/bookworm/amd64/cloud/20260821_05%3A24/rootfs.tar.xz",
+            "url": "https://mirrors.nju.edu.cn/lxc-images/images/debian/bookworm/amd64/cloud/20260822_05%3A24/rootfs.tar.xz",
             "mirror": "lxc-nju",
             "format": "tar.xz",
-            "last_modified": "2026-08-21T15:25:14Z"
+            "last_modified": "2026-08-22T15:18:05Z"
           },
           {
-            "url": "https://mirrors.bfsu.edu.cn/lxc-images/images/debian/bookworm/amd64/cloud/20260821_05%3A24/rootfs.tar.xz",
+            "url": "https://mirrors.bfsu.edu.cn/lxc-images/images/debian/bookworm/amd64/cloud/20260823_05%3A24/rootfs.tar.xz",
             "mirror": "lxc-bfsu",
             "format": "tar.xz",
             "last_modified": "0001-01-01T00:00:00Z"
@@ -615,7 +657,7 @@
         "version": "current",
         "sources": [
           {
-            "url": "https://mirrors.tuna.tsinghua.edu.cn/lxc-images/images/archlinux/current/amd64/cloud/20260822_04%3A18/rootfs.tar.xz",
+            "url": "https://mirrors.tuna.tsinghua.edu.cn/lxc-images/images/archlinux/current/amd64/cloud/20260823_04%3A59/rootfs.tar.xz",
             "mirror": "lxc-tuna",
             "format": "tar.xz",
             "last_modified": "0001-01-01T00:00:00Z"
@@ -627,13 +669,13 @@
             "last_modified": "0001-01-01T00:00:00Z"
           },
           {
-            "url": "https://mirrors.nju.edu.cn/lxc-images/images/archlinux/current/amd64/cloud/20260821_04%3A35/rootfs.tar.xz",
+            "url": "https://mirrors.nju.edu.cn/lxc-images/images/archlinux/current/amd64/cloud/20260822_04%3A18/rootfs.tar.xz",
             "mirror": "lxc-nju",
             "format": "tar.xz",
-            "last_modified": "2026-08-21T13:23:34Z"
+            "last_modified": "2026-08-22T13:53:38Z"
           },
           {
-            "url": "https://mirrors.bfsu.edu.cn/lxc-images/images/archlinux/current/amd64/cloud/20260822_04%3A18/rootfs.tar.xz",
+            "url": "https://mirrors.bfsu.edu.cn/lxc-images/images/archlinux/current/amd64/cloud/20260823_04%3A59/rootfs.tar.xz",
             "mirror": "lxc-bfsu",
             "format": "tar.xz",
             "last_modified": "0001-01-01T00:00:00Z"
@@ -645,43 +687,19 @@
         "version": "2023",
         "sources": [
           {
-            "url": "https://mirrors.tuna.tsinghua.edu.cn/lxc-images/images/amazonlinux/2023/amd64/default/20260822_05%3A09/rootfs.tar.xz",
+            "url": "https://mirrors.tuna.tsinghua.edu.cn/lxc-images/images/amazonlinux/2023/amd64/default/20260823_05%3A09/rootfs.tar.xz",
             "mirror": "lxc-tuna",
             "format": "tar.xz",
             "last_modified": "0001-01-01T00:00:00Z"
           },
           {
-            "url": "https://mirrors.nju.edu.cn/lxc-images/images/amazonlinux/2023/amd64/default/20260821_05%3A09/rootfs.tar.xz",
+            "url": "https://mirrors.nju.edu.cn/lxc-images/images/amazonlinux/2023/amd64/default/20260822_05%3A09/rootfs.tar.xz",
             "mirror": "lxc-nju",
             "format": "tar.xz",
-            "last_modified": "2026-08-21T13:20:07Z"
+            "last_modified": "2026-08-22T13:40:00Z"
           },
           {
-            "url": "https://mirrors.bfsu.edu.cn/lxc-images/images/amazonlinux/2023/amd64/default/20260822_05%3A09/rootfs.tar.xz",
-            "mirror": "lxc-bfsu",
-            "format": "tar.xz",
-            "last_modified": "0001-01-01T00:00:00Z"
-          }
-        ]
-      },
-      {
-        "name": "Amazon Linux",
-        "version": "2",
-        "sources": [
-          {
-            "url": "https://mirrors.tuna.tsinghua.edu.cn/lxc-images/images/amazonlinux/2/amd64/default/20260806_05%3A09/rootfs.tar.xz",
-            "mirror": "lxc-tuna",
-            "format": "tar.xz",
-            "last_modified": "0001-01-01T00:00:00Z"
-          },
-          {
-            "url": "https://mirrors.nju.edu.cn/lxc-images/images/amazonlinux/2/amd64/default/20260806_05%3A09/rootfs.tar.xz",
-            "mirror": "lxc-nju",
-            "format": "tar.xz",
-            "last_modified": "2026-08-06T13:30:13Z"
-          },
-          {
-            "url": "https://mirrors.bfsu.edu.cn/lxc-images/images/amazonlinux/2/amd64/default/20260806_05%3A09/rootfs.tar.xz",
+            "url": "https://mirrors.bfsu.edu.cn/lxc-images/images/amazonlinux/2023/amd64/default/20260823_05%3A09/rootfs.tar.xz",
             "mirror": "lxc-bfsu",
             "format": "tar.xz",
             "last_modified": "0001-01-01T00:00:00Z"
@@ -693,19 +711,19 @@
         "version": "3.24",
         "sources": [
           {
-            "url": "https://mirrors.tuna.tsinghua.edu.cn/lxc-images/images/alpine/3.24/amd64/cloud/20260821_13%3A00/rootfs.tar.xz",
+            "url": "https://mirrors.tuna.tsinghua.edu.cn/lxc-images/images/alpine/3.24/amd64/cloud/20260822_13%3A00/rootfs.tar.xz",
             "mirror": "lxc-tuna",
             "format": "tar.xz",
             "last_modified": "0001-01-01T00:00:00Z"
           },
           {
-            "url": "https://mirrors.nju.edu.cn/lxc-images/images/alpine/3.24/amd64/cloud/20260820_13%3A00/rootfs.tar.xz",
+            "url": "https://mirrors.nju.edu.cn/lxc-images/images/alpine/3.24/amd64/cloud/20260822_13%3A00/rootfs.tar.xz",
             "mirror": "lxc-nju",
             "format": "tar.xz",
-            "last_modified": "2026-08-20T22:43:17Z"
+            "last_modified": "2026-08-22T22:43:53Z"
           },
           {
-            "url": "https://mirrors.bfsu.edu.cn/lxc-images/images/alpine/3.24/amd64/cloud/20260821_13%3A00/rootfs.tar.xz",
+            "url": "https://mirrors.bfsu.edu.cn/lxc-images/images/alpine/3.24/amd64/cloud/20260822_13%3A00/rootfs.tar.xz",
             "mirror": "lxc-bfsu",
             "format": "tar.xz",
             "last_modified": "0001-01-01T00:00:00Z"
@@ -747,19 +765,19 @@
             "last_modified": "2026-06-22T03:05:15Z"
           },
           {
-            "url": "https://mirrors.tuna.tsinghua.edu.cn/lxc-images/images/alpine/3.22/amd64/cloud/20260821_13%3A00/rootfs.tar.xz",
+            "url": "https://mirrors.tuna.tsinghua.edu.cn/lxc-images/images/alpine/3.22/amd64/cloud/20260822_13%3A00/rootfs.tar.xz",
             "mirror": "lxc-tuna",
             "format": "tar.xz",
             "last_modified": "0001-01-01T00:00:00Z"
           },
           {
-            "url": "https://mirrors.nju.edu.cn/lxc-images/images/alpine/3.22/amd64/cloud/20260820_13%3A00/rootfs.tar.xz",
+            "url": "https://mirrors.nju.edu.cn/lxc-images/images/alpine/3.22/amd64/cloud/20260822_13%3A00/rootfs.tar.xz",
             "mirror": "lxc-nju",
             "format": "tar.xz",
-            "last_modified": "2026-08-20T22:41:38Z"
+            "last_modified": "2026-08-22T22:41:40Z"
           },
           {
-            "url": "https://mirrors.bfsu.edu.cn/lxc-images/images/alpine/3.22/amd64/cloud/20260821_13%3A00/rootfs.tar.xz",
+            "url": "https://mirrors.bfsu.edu.cn/lxc-images/images/alpine/3.22/amd64/cloud/20260822_13%3A00/rootfs.tar.xz",
             "mirror": "lxc-bfsu",
             "format": "tar.xz",
             "last_modified": "0001-01-01T00:00:00Z"
@@ -795,19 +813,19 @@
         "version": "10",
         "sources": [
           {
-            "url": "https://mirrors.tuna.tsinghua.edu.cn/lxc-images/images/almalinux/10/amd64/cloud/20260821_23%3A08/rootfs.tar.xz",
+            "url": "https://mirrors.tuna.tsinghua.edu.cn/lxc-images/images/almalinux/10/amd64/cloud/20260822_23%3A08/rootfs.tar.xz",
             "mirror": "lxc-tuna",
             "format": "tar.xz",
             "last_modified": "0001-01-01T00:00:00Z"
           },
           {
-            "url": "https://mirrors.nju.edu.cn/lxc-images/images/almalinux/10/amd64/cloud/20260820_23%3A08/rootfs.tar.xz",
+            "url": "https://mirrors.nju.edu.cn/lxc-images/images/almalinux/10/amd64/cloud/20260821_23%3A08/rootfs.tar.xz",
             "mirror": "lxc-nju",
             "format": "tar.xz",
-            "last_modified": "2026-08-21T08:32:02Z"
+            "last_modified": "2026-08-22T08:24:01Z"
           },
           {
-            "url": "https://mirrors.bfsu.edu.cn/lxc-images/images/almalinux/10/amd64/cloud/20260821_23%3A08/rootfs.tar.xz",
+            "url": "https://mirrors.bfsu.edu.cn/lxc-images/images/almalinux/10/amd64/cloud/20260822_23%3A08/rootfs.tar.xz",
             "mirror": "lxc-bfsu",
             "format": "tar.xz",
             "last_modified": "0001-01-01T00:00:00Z"
