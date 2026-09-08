@@ -24,7 +24,7 @@ wsl-community repository
     User device
 ```
 
-The `www/` directory of the `main` branch is automatically published to CDN, accessible via the `https://api3.wslui.com` domain. The directory structure maps directly to URL paths.
+The `wwwroot/` directory of the `main` branch is automatically published to CDN, accessible via the `https://api2.wslui.com` domain. The directory structure maps directly to URL paths.
 
 ---
 
@@ -32,34 +32,35 @@ The `www/` directory of the `main` branch is automatically published to CDN, acc
 
 ```
 wsl-community/
-├── README.md                    # English (not published)
-├── README.zh-CN.md              # Chinese (not published)
-├── LICENSE                      # GPLv3 License (not published)
+├── README.md                      # English documentation (not published)
+├── README.zh-CN.md                # Chinese documentation (not published)
+├── LICENSE                        # GPLv3 License (not published)
 │
-├── documents/                   # Development docs (not published to CDN)
-│   ├── zh-CN/                   # Chinese docs
-│   │   ├── data-source.md       # Data source and filtering rules
-│   │   ├── debug-config.md      # Debug configuration guide
-│   │   └── mirrors.yml          # Mirror sites reference list
-│   └── en/                      # English docs
+├── documents/                     # Development documentation (not published to CDN)
+│   ├── zh-CN/                     # Chinese documentation
+│   │   ├── data-source.md         # Data sources and filtering rules
+│   │   ├── debug-config.md        # Debug configuration instructions
+│   │   └── mirrors.yml            # Mirror site reference list
+│   └── en/                        # English documentation
 │       ├── data-source.md
 │       ├── debug-config.md
 │       └── mirrors.yml
 │
-├── scripts/                     # Repository-level utility scripts (not published to CDN)
-│   │                            # For development, operations, automation, etc.
-│   └── export-wsl.ps1           # Export WSL distros to .tar.gz backup
+├── scripts/                       # Repository-level utility scripts (not published to CDN)
+│   │                              # Used for development assistance, operations, automation, etc.
+│   └── export-wsl.ps1             # Export WSL distribution as .tar.gz backup (example script)
 │
-└── www/                         # Publish directory (auto-published to CDN on main)
-    ├── _headers                 # CDN response headers
+└── wwwroot/                       # Publish directory (merged to main, automatically published to CDN)
+    ├── _headers                   # CDN response header configuration
     │
-    ├── api/                     # API data endpoints
-    │   └── install/             # Data for "Install" page
-    │       └── online-distros   # Online distro mirror list
+    ├── common/                    # Version update API (officially maintained, ensures historical version API compatibility)
     │
-    └── scripts/                 # CDN-delivered scripts (called by software online)
-        └── home/                # Scripts for "Home" page
-            └── distro-cleanup.sh         # Distro cleanup script
+    └── co-creation/               # Community co-creation
+        └── api/                   # API endpoints
+        │   └── online-distros     # Online distribution mirror source list
+        │
+        └── scripts/               # Dependency scripts
+            └── distro-cleanup.sh  # Distribution cleanup script
 ```
 
 ### Directory Purposes
@@ -68,7 +69,7 @@ wsl-community/
 |:---|:---|:---:|
 | `documents/` | Development docs, data specs, debug guides | No |
 | `scripts/` | Repository-level utility scripts for dev/ops/automation | No |
-| `www/` | Data and scripts consumed by the software, auto-published on PR merge | Yes |
+| `wwwroot/` | Data and scripts consumed by the software, auto-published on PR merge | Yes |
 
 ---
 
@@ -111,34 +112,34 @@ Feel free to submit Pull Requests adding new utility scripts to `scripts/`. Plea
 
 ---
 
-## Publish Directory (`www/`)
+## Publish Directory (`wwwroot/`)
 
-This is the core output of the repository — the `www/` directory on the `main` branch is **automatically published to CDN** and served via `https://api3.wslui.com`. All data and scripts consumed online by WSL Dashboard come from here.
+This is the core output of the repository — the `wwwroot/` directory on the `main` branch is **automatically published to CDN** and served via `https://api2.wslui.com`. All data and scripts consumed online by WSL Dashboard come from here.
 
-> Directory structure maps directly to URL paths. For example, `www/api/install/online-distros` is accessible at `https://api3.wslui.com/api/install/online-distros`.
+> Directory structure maps directly to URL paths. For example, `wwwroot/co-creation/api/online-distros` is accessible at `https://api2.wslui.com/co-creation/api/online-distros`.
 
-`www/` currently contains two types of content:
+`wwwroot/` currently contains two types of content:
 
 | Path | Purpose | Consumed By |
 |:---|:---|:---|
-| `www/api/install/online-distros` | Online distro mirror source data | WSL Dashboard - Install page |
-| `www/scripts/home/distro-cleanup.sh` | Distro cleanup script (runs as root inside WSL) | WSL Dashboard - Compress distro |
+| `wwwroot/co-creation/api/online-distros` | Online distro mirror source data | WSL Dashboard - Install page |
+| `wwwroot/co-creation/scripts/distro-cleanup.sh` | Distro cleanup script (runs as root inside WSL) | WSL Dashboard - Compress distro |
 
-When a PR modifying files under `www/` is merged to `main`, the CDN content updates automatically — no manual deployment needed.
+When a PR modifying files under `wwwroot/` is merged to `main`, the CDN content updates automatically — no manual deployment needed.
 
 ### URL Mapping
 
 | File Path | Access URL | Purpose |
 |:---|:---|:---|
-| `www/api/install/online-distros` | `https://api3.wslui.com/api/install/online-distros` | Install page - Online distro (mirror) source data |
-| `www/scripts/home/distro-cleanup.sh` | `https://api3.wslui.com/scripts/home/distro-cleanup.sh` | Home page - Compress distro - Cleanup script |
+| `wwwroot/co-creation/api/online-distros` | `https://api2.wslui.com/co-creation/api/online-distros` | Install page - Online distro (mirror) source data |
+| `wwwroot/co-creation/scripts/distro-cleanup.sh` | `https://api2.wslui.com/co-creation/scripts/distro-cleanup.sh` | Home page - Compress distro - Cleanup script |
 
 ### Cache Policy
 
 | Path | CDN Cache | Browser Cache | Content-Type |
 |:---|:---|:---|:---|
-| `/api/*` | 2 minutes | 1 minute | `application/json` |
-| `/scripts/*` | 5 minutes | 3 minutes | `application/x-sh` |
+| `/co-creation/api/*` | 2 minutes | 1 minute | `application/json` |
+| `/co-creation/scripts/*` | 5 minutes | 3 minutes | `application/x-sh` |
 
 ---
 
@@ -220,7 +221,7 @@ This script executes as `root` within the WSL distro to clean temporary files an
 - Use `command -v` to auto-detect available package managers
 - Do not delete user data; only clean system temporary files and package caches
 
-**Reference:** See `www/scripts/home/distro-cleanup.sh` in this repository
+**Reference:** See `wwwroot/co-creation/scripts/distro-cleanup.sh` in this repository
 
 ---
 
@@ -243,18 +244,18 @@ Windows:  C:\Users\<your username>\.wsldashboard\debug.toml
 ```toml
 [install]
 # Point to local online-distros file
-online-distros = 'D:\develop\wsl-community\www\api\install\online-distros'
+online-distros = 'D:\develop\wsl-community\wwwroot\co-creation\api\online-distros'
 
 [distro]
 # Point to local distro-cleanup.sh file
-cleanup-script = 'D:\develop\wsl-community\www\scripts\home\distro-cleanup.sh'
+cleanup-script = 'D:\develop\wsl-community\wwwroot\co-creation\scripts\distro-cleanup.sh'
 ```
 
 > Replace the paths with your actual repository paths.
 
 ### 3. Test Mirror Source Data
 
-1. Edit `www/api/install/online-distros` file
+1. Edit `wwwroot/co-creation/api/online-distros` file
 2. Launch WSL Dashboard
 3. Go to **Create New Instance** → select **Online Distro (Mirror)**
 4. The software will load the distro list from the local file
@@ -266,7 +267,7 @@ cleanup-script = 'D:\develop\wsl-community\www\scripts\home\distro-cleanup.sh'
 
 ### 4. Test Cleanup Script
 
-1. Edit `www/scripts/home/distro-cleanup.sh` file
+1. Edit `wwwroot/co-creation/scripts/distro-cleanup.sh` file
 2. Launch WSL Dashboard
 3. Execute **Compression** on any installed distro
 4. During the cleanup phase, the software will execute the local script
@@ -318,16 +319,16 @@ Or simply delete the entire file.
    ```bash
    git checkout -b feat/add-new-distro
    ```
-4. **Edit files**: Modify data or scripts under `www/` directory
+4. **Edit files**: Modify data or scripts under `wwwroot/` directory
 5. **Local debug**: Verify changes following the "Local Debugging" steps above
 6. **Commit and push**:
    ```bash
-   git add www/api/install/online-distros
+   git add wwwroot/co-creation/api/online-distros
    git commit -m "feat: add Ubuntu 24.10 mirror source"
    git push origin feat/add-new-distro
    ```
 7. **Create Pull Request**: Target branch is `main`
-8. **Auto-deploy after merge**: After PR is merged to `main`, changes will be automatically published to `https://api3.wslui.com`
+8. **Auto-deploy after merge**: After PR is merged to `main`, changes will be automatically published to `https://api2.wslui.com`
 
 ---
 
@@ -338,7 +339,7 @@ Or simply delete the entire file.
 - **Keep JSON formatted**: JSON files must use indented formatting (4-space indent), **do not use minified/compressed JSON**. This allows git diff to clearly show line-level changes for code review
 - **Consistent indentation**: All files use **4 spaces** for indentation, tabs are prohibited (the project has `.editorconfig` configured, mainstream editors will follow automatically)
 - **Script compatibility**: Cleanup scripts should be compatible with mainstream Linux distros
-- **No file extension in URL**: Access via `/api/install/online-distros`, not `.json`
+- **No file extension in URL**: Access via `/wwwroot/co-creation/api/online-distros`, not `.json`
 - **Distro sorting rule**: The `data.distros` array in the `online-distros` file must be sorted by:
   - Primary key: `name` (distribution name), **descending** (Z → A)
   - Secondary key: `version` (version number), **descending** (higher versions first)

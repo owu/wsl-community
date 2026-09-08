@@ -24,7 +24,7 @@ wsl-community 仓库
     用户设备
 ```
 
-本仓库 `main` 分支的 `www/` 目录内容会自动发布到 CDN，通过 `https://api3.wslui.com` 域名访问。目录结构直接映射为 URL 路径。
+本仓库 `main` 分支的 `wwwroot/` 目录内容会自动发布到 CDN，通过 `https://api2.wslui.com` 域名访问。目录结构直接映射为 URL 路径。
 
 ---
 
@@ -32,34 +32,35 @@ wsl-community 仓库
 
 ```
 wsl-community/
-├── README.md                    # 英文说明（不发布）
-├── README.zh-CN.md              # 中文说明（不发布）
-├── LICENSE                      # GPLv3 许可证（不发布）
+├── README.md                      # 英文说明（不发布）
+├── README.zh-CN.md                # 中文说明（不发布）
+├── LICENSE                        # GPLv3 许可证（不发布）
 │
-├── documents/                   # 开发文档（不发布到 CDN）
-│   ├── zh-CN/                   # 中文文档
-│   │   ├── data-source.md       # 数据来源与过滤规则
-│   │   ├── debug-config.md      # 调试配置说明
-│   │   └── mirrors.yml          # 镜像站参考列表
-│   └── en/                      # 英文文档
+├── documents/                     # 开发文档（不发布到 CDN）
+│   ├── zh-CN/                     # 中文文档
+│   │   ├── data-source.md         # 数据来源与过滤规则
+│   │   ├── debug-config.md        # 调试配置说明
+│   │   └── mirrors.yml            # 镜像站参考列表
+│   └── en/                        # 英文文档
 │       ├── data-source.md
 │       ├── debug-config.md
 │       └── mirrors.yml
 │
-├── scripts/                     # 仓库级工具脚本（不发布到 CDN）
-│   │                            # 用于辅助开发、运维、自动化等场景
-│   └── export-wsl.ps1           # 导出 WSL 发行版为 .tar.gz 备份
+├── scripts/                       # 仓库级工具脚本（不发布到 CDN）
+│   │                              # 用于辅助开发、运维、自动化等场景
+│   └── export-wsl.ps1             # 导出 WSL 发行版为 .tar.gz 备份（示例脚本）
 │
-└── www/                         # 发布目录（合并到 main 后自动发布到 CDN）
-    ├── _headers                 # CDN 响应头配置
+└── wwwroot/                       # 发布目录（合并到 main 后自动发布到 CDN）
+    ├── _headers                   # CDN 响应头配置
     │
-    ├── api/                     # API 数据端点
-    │   └── install/             # "安装"页面使用的数据
-    │       └── online-distros   # 在线发行版镜像源列表
+    ├── common/                    # 版本更新接口(官方维护,实现历史版本接口兼容)
     │
-    └── scripts/                 # CDN 分发的脚本（软件在线调用）
-        └── home/                # "主页"使用的脚本
-            └── distro-cleanup.sh         # 发行版清理脚本
+    └── co-creation/               # 社区共建
+        └── api/                   # API接口
+        │   └── online-distros     # 在线发行版镜像源列表
+        │
+        └── scripts/               # 依赖脚本
+            └── distro-cleanup.sh  # 发行版清理脚本
 ```
 
 ### 目录说明
@@ -68,7 +69,7 @@ wsl-community/
 |:---|:---|:---:|
 | `documents/` | 开发文档、数据规范、调试指南 | 否 |
 | `scripts/` | 仓库级工具脚本，辅助开发/运维/自动化 | 否 |
-| `www/` | 软件在线调用的数据和脚本，PR 合入后自动发布 | 是 |
+| `wwwroot/` | 软件在线调用的数据和脚本，PR 合入后自动发布 | 是 |
 
 ---
 
@@ -111,34 +112,34 @@ wsl-community/
 
 ---
 
-## 发布目录 (`www/`)
+## 发布目录 (`wwwroot/`)
 
-该目录是仓库的核心输出——`main` 分支的 `www/` 目录内容会**自动发布到 CDN**，通过 `https://api3.wslui.com` 域名访问。WSL Dashboard 软件在线调用的数据和脚本均来源于此。
+该目录是仓库的核心输出——`main` 分支的 `wwwroot/` 目录内容会**自动发布到 CDN**，通过 `https://api2.wslui.com` 域名访问。WSL Dashboard 软件在线调用的数据和脚本均来源于此。
 
-> 目录结构直接映射为 URL 路径，例如 `www/api/install/online-distros` 可通过 `https://api3.wslui.com/api/install/online-distros` 访问。
+> 目录结构直接映射为 URL 路径，例如 `wwwroot/co-creation/api/online-distros` 可通过 `https://api2.wslui.com/co-creation/api/online-distros` 访问。
 
-`www/` 下目前包含两类内容：
+`wwwroot/` 下目前包含两类内容：
 
 | 路径 | 用途 | 调用方 |
 |:---|:---|:---|
-| `www/api/install/online-distros` | 在线发行版镜像源数据 | WSL Dashboard - Install 页 |
-| `www/scripts/home/distro-cleanup.sh` | 发行版清理脚本（在 WSL 内以 root 执行） | WSL Dashboard - 压缩发行版 |
+| `wwwroot/co-creation/api/online-distros` | 在线发行版镜像源数据 | WSL Dashboard - Install 页 |
+| `wwwroot/co-creation/scripts/distro-cleanup.sh` | 发行版清理脚本（在 WSL 内以 root 执行） | WSL Dashboard - 压缩发行版 |
 
-通过 PR 修改 `www/` 下的文件并合并到 `main` 后，CDN 内容会自动更新，无需手动部署。
+通过 PR 修改 `wwwroot/` 下的文件并合并到 `main` 后，CDN 内容会自动更新，无需手动部署。
 
 ### URL 映射
 
 | 文件路径 | 访问 URL | 用途 |
 |:---|:---|:---|
-| `www/api/install/online-distros` | `https://api3.wslui.com/api/install/online-distros` | Install 页 - 在线发行版(镜像) 源数据 |
-| `www/scripts/home/distro-cleanup.sh` | `https://api3.wslui.com/scripts/home/distro-cleanup.sh` | Home 页 - 压缩发行版 - 清理脚本 |
+| `wwwroot/co-creation/api/online-distros` | `https://api2.wslui.com/co-creation/api/online-distros` | Install 页 - 在线发行版(镜像) 源数据 |
+| `wwwroot/co-creation/scripts/distro-cleanup.sh` | `https://api2.wslui.com/co-creation/scripts/distro-cleanup.sh` | Home 页 - 压缩发行版 - 清理脚本 |
 
 ### 缓存策略
 
 | 路径 | CDN 缓存 | 浏览器缓存 | Content-Type |
 |:---|:---|:---|:---|
-| `/api/*` | 2 分钟 | 1 分钟 | `application/json` |
-| `/scripts/*` | 5 分钟 | 3 分钟 | `application/x-sh` |
+| `/co-creation/api/*` | 2 分钟 | 1 分钟 | `application/json` |
+| `/co-creation/scripts/*` | 5 分钟 | 3 分钟 | `application/x-sh` |
 
 ---
 
@@ -220,7 +221,7 @@ wsl-community/
 - 使用 `command -v` 自动检测可用的包管理器
 - 不要删除用户数据，只清理系统临时文件和包缓存
 
-**参考示例：** 查看当前仓库中的 `www/scripts/home/distro-cleanup.sh`
+**参考示例：** 查看当前仓库中的 `wwwroot/co-creation/scripts/distro-cleanup.sh`
 
 ---
 
@@ -243,18 +244,18 @@ Windows:  C:\Users\<你的用户名>\.wsldashboard\debug.toml
 ```toml
 [install]
 # 指向本地的 online-distros 文件
-online-distros = 'D:\develop\wsl-community\www\api\install\online-distros'
+online-distros = 'D:\develop\wsl-community\wwwroot\co-creation\api\online-distros'
 
 [distro]
 # 指向本地的 distro-cleanup.sh 文件
-cleanup-script = 'D:\develop\wsl-community\www\scripts\home\distro-cleanup.sh'
+cleanup-script = 'D:\develop\wsl-community\wwwroot\co-creation\scripts\distro-cleanup.sh'
 ```
 
 > 将路径替换为你本仓库的实际路径。
 
 ### 3. 测试镜像源数据
 
-1. 编辑 `www/api/install/online-distros` 文件
+1. 编辑 `wwwroot/co-creation/api/online-distros` 文件
 2. 启动 WSL Dashboard
 3. 进入 **创建新实例** → 选择 **在线发行版（镜像）**
 4. 软件将从本地文件加载发行版列表
@@ -266,7 +267,7 @@ cleanup-script = 'D:\develop\wsl-community\www\scripts\home\distro-cleanup.sh'
 
 ### 4. 测试清理脚本
 
-1. 编辑 `www/scripts/home/distro-cleanup.sh` 文件
+1. 编辑 `wwwroot/co-creation/scripts/distro-cleanup.sh` 文件
 2. 启动 WSL Dashboard
 3. 对任意已安装的发行版执行 **压缩** 操作
 4. 在清理阶段，软件将执行本地脚本
@@ -318,16 +319,16 @@ cleanup-script = ''
    ```bash
    git checkout -b feat/add-new-distro
    ```
-4. **编辑文件**：修改 `www/` 目录下的数据或脚本
+4. **编辑文件**：修改 `wwwroot/` 目录下的数据或脚本
 5. **本地调试**：按照上述「本地调试」步骤验证修改
 6. **提交并推送**：
    ```bash
-   git add www/api/install/online-distros
+   git add wwwroot/co-creation/api/online-distros
    git commit -m "feat: add Ubuntu 24.10 mirror source"
    git push origin feat/add-new-distro
    ```
 7. **创建 Pull Request**：目标分支为 `main`
-8. **合并后自动部署**：PR 合并到 `main` 后，会自动发布到 `https://api3.wslui.com`
+8. **合并后自动部署**：PR 合并到 `main` 后，会自动发布到 `https://api2.wslui.com`
 
 ---
 
@@ -338,7 +339,7 @@ cleanup-script = ''
 - **JSON 保持格式化**：JSON 文件必须使用带缩进的格式化输出（4 空格缩进），**不要使用压缩/去空格的 JSON**。这样 git diff 才能清晰展示行级变更，方便代码审查
 - **统一缩进**：所有文件使用 **4 个空格**缩进，禁止使用 Tab（项目已配置 `.editorconfig`，主流编辑器会自动遵循）
 - **脚本兼容性**：清理脚本应兼容主流 Linux 发行版
-- **URL 不要加扩展名**：访问时使用 `/api/install/online-distros`，不是 `.json`
+- **URL 不要加扩展名**：访问时使用 `/wwwroot/co-creation/api/online-distros`，不是 `.json`
 - **发行版排序规则**：`online-distros` 文件中的 `data.distros` 数组必须按以下规则排序：
   - 主排序键：`name`（发行版名称），**降序**（Z → A）
   - 次排序键：`version`（版本号），**降序**（高版本在前）
