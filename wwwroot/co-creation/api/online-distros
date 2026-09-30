@@ -2,7 +2,7 @@
   "err": 0,
   "msg": "success",
   "data": {
-    "update_time": "2026-09-30T09:32:17.710681014Z",
+    "update_time": "2026-09-30T10:19:03.040042332Z",
     "distros": [
       {
         "name": "openSUSE",
@@ -23,24 +23,6 @@
           {
             "url": "https://mirrors.bfsu.edu.cn/lxc-images/images/opensuse/16.0/amd64/cloud/20260929_04%3A20/rootfs.tar.xz",
             "mirror": "lxc-bfsu",
-            "format": "tar.xz",
-            "last_modified": "0001-01-01T00:00:00Z"
-          }
-        ]
-      },
-      {
-        "name": "openSUSE",
-        "version": "15.6",
-        "sources": [
-          {
-            "url": "https://mirrors.sjtug.sjtu.edu.cn/openSUSE/distribution/leap/15.6/appliances/opensuse-leap-dnf-image.x86_64-15.6.0-lxc-dnf-Build19.146.tar.xz",
-            "mirror": "sjtu",
-            "format": "tar.xz",
-            "last_modified": "0001-01-01T00:00:00Z"
-          },
-          {
-            "url": "https://mirrors.163.com/openSUSE/distribution/leap/15.6/appliances/opensuse-leap-dnf-image.x86_64-15.6.0-lxc-dnf-Build19.146.tar.xz",
-            "mirror": "163",
             "format": "tar.xz",
             "last_modified": "0001-01-01T00:00:00Z"
           }
@@ -147,12 +129,6 @@
             "last_modified": "0001-01-01T00:00:00Z"
           },
           {
-            "url": "https://mirrors.hust.edu.cn/ubuntu-releases/24.04/ubuntu-24.04.5-wsl-amd64.wsl",
-            "mirror": "hust",
-            "format": "wsl",
-            "last_modified": "0001-01-01T00:00:00Z"
-          },
-          {
             "url": "https://mirrors.huaweicloud.com/ubuntu-releases/24.04/ubuntu-24.04.5-wsl-amd64.wsl",
             "mirror": "huawei",
             "format": "wsl",
@@ -175,12 +151,6 @@
             "mirror": "aliyun",
             "format": "wsl",
             "last_modified": "2026-09-11T01:10:00Z"
-          },
-          {
-            "url": "https://mirrors.163.com/ubuntu-releases/24.04/ubuntu-24.04.5-wsl-amd64.wsl",
-            "mirror": "163",
-            "format": "wsl",
-            "last_modified": "0001-01-01T00:00:00Z"
           }
         ]
       },
@@ -222,12 +192,6 @@
             "url": "https://mirrors.bfsu.edu.cn/lxc-images/images/ubuntu/jammy/amd64/cloud/20260929_07%3A42/rootfs.tar.xz",
             "mirror": "lxc-bfsu",
             "format": "tar.xz",
-            "last_modified": "0001-01-01T00:00:00Z"
-          },
-          {
-            "url": "https://mirrors.hust.edu.cn/ubuntu-releases/22.04/ubuntu-22.04.5-wsl-amd64.wsl",
-            "mirror": "hust",
-            "format": "wsl",
             "last_modified": "0001-01-01T00:00:00Z"
           },
           {
@@ -282,12 +246,6 @@
             "url": "https://mirrors.cloud.tencent.com/lxc-images/images/ubuntu/focal/amd64/cloud/20200312_07%3A42/rootfs.tar.xz",
             "mirror": "lxc-tencent",
             "format": "tar.xz",
-            "last_modified": "0001-01-01T00:00:00Z"
-          },
-          {
-            "url": "https://mirrors.hust.edu.cn/ubuntu-releases/20.04/ubuntu-20.04.6-wsl-amd64.wsl",
-            "mirror": "hust",
-            "format": "wsl",
             "last_modified": "0001-01-01T00:00:00Z"
           },
           {
@@ -361,12 +319,6 @@
             "mirror": "aliyun",
             "format": "wsl",
             "last_modified": "2026-05-26T03:57:00Z"
-          },
-          {
-            "url": "https://mirrors.163.com/rocky/9/images/x86_64/Rocky-9-WSL-Base-9.8-20260525.0.x86_64.wsl",
-            "mirror": "163",
-            "format": "wsl",
-            "last_modified": "0001-01-01T00:00:00Z"
           }
         ]
       },
@@ -824,24 +776,6 @@
       },
       {
         "name": "openSUSE",
-        "version": "15.6",
-        "sources": [
-          {
-            "url": "https://mirrors.sjtug.sjtu.edu.cn/openSUSE/distribution/leap/15.6/appliances/openSUSE-Leap-15.6-ARM-E20.aarch64-rootfs.aarch64-2025.01.29-Build19.146.tar.xz",
-            "mirror": "sjtu",
-            "format": "tar.xz",
-            "last_modified": "0001-01-01T00:00:00Z"
-          },
-          {
-            "url": "https://mirrors.163.com/openSUSE/distribution/leap/15.6/appliances/openSUSE-Leap-15.6-ARM-E20.aarch64-rootfs.aarch64-2025.01.29-Build19.146.tar.xz",
-            "mirror": "163",
-            "format": "tar.xz",
-            "last_modified": "0001-01-01T00:00:00Z"
-          }
-        ]
-      },
-      {
-        "name": "openSUSE",
         "version": "tumbleweed",
         "sources": [
           {
@@ -987,12 +921,6 @@
             "mirror": "aliyun",
             "format": "wsl",
             "last_modified": "2026-05-26T03:57:00Z"
-          },
-          {
-            "url": "https://mirrors.163.com/rocky/9/images/aarch64/Rocky-9-WSL-Base-9.8-20260525.0.aarch64.wsl",
-            "mirror": "163",
-            "format": "wsl",
-            "last_modified": "0001-01-01T00:00:00Z"
           }
         ]
       },
