@@ -2,7 +2,7 @@
   "err": 0,
   "msg": "success",
   "data": {
-    "update_time": "2026-11-21T12:35:06.286942054Z",
+    "update_time": "2026-11-22T05:35:06.39341383Z",
     "distros": [
       {
         "name": "openSUSE",
@@ -1083,6 +1083,12 @@
             "mirror": "aliyun",
             "format": "wsl",
             "last_modified": "2026-11-13T08:28:00Z"
+          },
+          {
+            "url": "https://mirrors.163.com/rocky/9/images/aarch64/Rocky-9-WSL-Base-9.9-20261112.0.aarch64.wsl",
+            "mirror": "163",
+            "format": "wsl",
+            "last_modified": "0001-01-01T00:00:00Z"
           }
         ]
       },
